@@ -134,7 +134,7 @@ The following plots show the loss progression and learning rate schedule
 during BambooLM-124M training.
 
 <p align="center">
-  <img src="model_train.png" width="900">
+  <img src="model_train2.png" width="900">
 </p>
 
 - Top: Training loss across optimization steps

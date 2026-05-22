@@ -7,8 +7,7 @@
 ██████╔╝██║  ██║██║ ╚═╝ ██║██████╔╝╚██████╔╝╚██████╔╝███████╗██║ ╚═╝ ██║       ██║███████╗     ██║██║ ╚═╝ ██║
 ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═╝     ╚═╝       ╚═╝╚══════╝     ╚═╝╚═╝     ╚═╝
 
-,,,     
-                                                                                                        
+'''                                                                                                   
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
 ![Model](https://img.shields.io/badge/Model-GPT2--Style-green)

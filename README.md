@@ -141,7 +141,7 @@ during BambooLM-124M training on 500M tokens.
 - Bottom: Cosine learning rate schedule
 
 ---
-# Sample output
+# Sample output after 500M token traning
 <img width="1004" height="413" alt="image" src="https://github.com/user-attachments/assets/50c02754-9740-4e09-933d-3b0093fa76ac" />
 
 ---

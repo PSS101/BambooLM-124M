@@ -10,10 +10,20 @@ import time
 import numpy as np
 import random
 import os
+import logo
 
-idx=0
 model=None
+model_logs=[]
+
+def save_logs():
+    global model_logs
+    with open("", "a") as log:
+        for logs in model_logs:
+            log.write(f"{logs[0], logs[1], logs[2]}")
+    model_logs = []
 try:
+    global model_logs
+    global model
     check_point_dir = ""
     @dataclass()
     class Model_Config():
@@ -166,6 +176,11 @@ try:
                     loss.backward()
                 norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 lr = get_lr(i)
+                model_logs.append({
+                    "step":i,
+                    "loss":l,
+                    "lr":lr
+                })
                 for param_group in optimizer.param_groups:
                     param_group['lr'] = lr
                 optimizer.step()
@@ -178,7 +193,8 @@ try:
 
                 if i%100==0:
                     self.save(i)
-                    idx =i
+                    save_logs()
+
 
         def save(self,i=None):
             chk_point = {
@@ -210,7 +226,7 @@ try:
             shards = [s for s in shards if s.endswith(".npy")]
             shards = sorted (shards)
             shards = [os.path.join(root,s) for s in shards]
-            #shard = sorted(glob.glob(f"/home/pss/PycharmProjects/ML/edu_fineweb10B/edufineweb_train_000001.npy"))
+            #shard = sorted(glob.glob(f""))
             #assert len(shard)>0
             random.shuffle(shards)
             print(",".join(shards))
@@ -266,6 +282,7 @@ try:
             print("->", decoded)
 
 
+
     print(torch.cuda.is_available())
     print(torch.cuda.get_device_name(0))
     device = torch.device('cuda:0')
@@ -316,12 +333,18 @@ try:
     model.train_(steps)
 
     model.save()
+    save_logs()
 
+    logo.print_logo()
+    print("Type something: ",end="")
+    while(1):
+        print(">",end="")
+        inp = str(input())
+        model_test(model=model,input=inp)
 
-
-    model_test(model=model,input="the weather is")
 
 except KeyboardInterrupt:
     print("saving model")
     model.save()
+    save_logs()
 

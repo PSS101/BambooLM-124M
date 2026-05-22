@@ -14,16 +14,21 @@ import logo
 
 model=None
 model_logs=[]
-
+visited_shards = []
+with open("shards.csv", "r") as f:
+    for s in f:
+        visited_shards.append(s.strip())
+print("visited shards", visited_shards)
 def save_logs():
     global model_logs
-    with open("", "a") as log:
+    with open("log.csv", "a") as log:
         for logs in model_logs:
-            log.write(f"{logs[0], logs[1], logs[2]}")
+            log.write(f"{logs["step"]},{logs["loss"]},{logs["lr"]}\n")
     model_logs = []
+    with open("shards.csv", "w") as log:
+        for logs in visited_shards:
+            log.write(f"{logs}\n")
 try:
-    global model_logs
-    global model
     check_point_dir = ""
     @dataclass()
     class Model_Config():
@@ -178,7 +183,7 @@ try:
                 lr = get_lr(i)
                 model_logs.append({
                     "step":i,
-                    "loss":l,
+                    "loss":l.item(),
                     "lr":lr
                 })
                 for param_group in optimizer.param_groups:
@@ -232,7 +237,10 @@ try:
             print(",".join(shards))
             self.shards = shards
             self.shard = 0
-            tokens = load_token(shards[0])
+            while (self.shards[self.shard] in visited_shards):
+                self.shard = (self.shard + 1) % len(self.shards)
+            visited_shards.append(self.shards[self.shard])
+            tokens = load_token(self.shards[self.shard])
             self.len_tokens = len(tokens)
             self.tokens = tokens
             print(f"{len(self.tokens)} tokens loaded")
@@ -245,9 +253,12 @@ try:
             if self.i+B*T+1>self.len_tokens:
                 self.i=0
                 self.shard = (self.shard+1)%len(self.shards)
+                while(self.shards[self.shard] in visited_shards):
+                    self.shard = (self.shard + 1) % len(self.shards)
                 self.tokens = load_token(self.shards[self.shard])
                 self.len_tokens = len(self.tokens)
                 print(self.shards[self.shard])
+                visited_shards.append(self.shards[self.shard])
 
             buf = torch.tensor(self.tokens[self.i:self.i+B*T+1])
             x = buf[:-1].view(B, T)
@@ -279,7 +290,7 @@ try:
         for i in range(num_return_seq):
             tokens = x[i, :max_len].tolist()
             decoded = en.decode(tokens)
-            print("->", decoded)
+            print("=>", decoded)
 
 
 
@@ -330,7 +341,7 @@ try:
     steps = int(total_tokens/(5*1e5))
     print("total steps:",steps)
 
-    model.train_(steps)
+    #model.train_(steps)
 
     model.save()
     save_logs()

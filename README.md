@@ -142,7 +142,8 @@ during BambooLM-124M training on 500M tokens.
 
 ---
 # Sample output after 500M token traning
-<img width="1004" height="413" alt="image" src="https://github.com/user-attachments/assets/50c02754-9740-4e09-933d-3b0093fa76ac" />
+<img width="1004" height="413" alt="image" src="https://github.com/user-attachments/assets/2e566fda-f4fc-4630-a9bd-245ea3661c87" />
+
 
 ---
 ## Parameter Scale

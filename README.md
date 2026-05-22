@@ -84,14 +84,21 @@ The architecture contains:
 
 ## Attention Mechanism
 
-BambooLM uses **causal self-attention**, ensuring tokens can only attend
-to previous tokens during training and inference.
+BambooLM uses **causal multi-head self-attention**, where each token
+can only attend to previous tokens in the sequence.
 
-This enables autoregressive next-token prediction:
+This masking mechanism prevents information leakage from future tokens
+during training and enables autoregressive text generation.
 
-```math
-P(x_t | x_{<t})
-```
+The model predicts the next token based on all previous context:
+
+:contentReference[oaicite:0]{index=0}
+
+BambooLM follows the GPT-2 attention design with:
+- Causal attention masking
+- Multi-head attention
+- Learned positional embeddings
+- Residual attention blocks
 
 ---
 

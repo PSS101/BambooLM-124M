@@ -15,10 +15,6 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 # Overview
 
 BambooLM-124M is a lightweight GPT-style autoregressive language model
@@ -144,3 +140,6 @@ BambooLM-124M is architecturally comparable to GPT-2 Small while maintaining
 a clean and extensible implementation for experimentation and research.
 
 ---
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

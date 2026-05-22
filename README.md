@@ -131,7 +131,7 @@ BambooLM follows the GPT-2 attention design with:
 # Training Curves
 
 The following plots show the loss progression and learning rate schedule
-during BambooLM-124M training.
+during BambooLM-124M training on 500M tokens.
 
 <p align="center">
   <img src="model_train2.png" width="900">

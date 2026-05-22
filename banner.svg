@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80">
   <style>
     text { 
-      font-family: monospace; 
+      font-family: Consolas, 'Liberation Mono', Menlo, monospace; 
       font-size: 11px; 
       fill: #4DA3FF; 
-      white-space: pre; /* Alternative to xml:space for modern SVGs */
+      white-space: pre; 
+      letter-spacing: 0px;
     }
   </style>
   <g xml:space="preserve">

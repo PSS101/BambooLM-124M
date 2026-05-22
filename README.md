@@ -128,7 +128,19 @@ BambooLM follows the GPT-2 attention design with:
 | Attention Type | Causal Self Attention |
 
 ---
+# Training Curves
 
+The following plots show the loss progression and learning rate schedule
+during BambooLM-124M training.
+
+<p align="center">
+  <img src="model_train.png" width="900">
+</p>
+
+- Top: Training loss across optimization steps
+- Bottom: Cosine learning rate schedule
+
+---
 ## Parameter Scale
 
 | Model | Parameters |

@@ -159,6 +159,10 @@ BambooLM-124M is architecturally comparable to GPT-2 Small while maintaining
 a clean and extensible implementation for experimentation and research.
 
 ---
+## Acknowledgments
+
+* A massive thank you to [Andrej Karpathy](https://github.com/karpathy) for his incredible educational content.
+---
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

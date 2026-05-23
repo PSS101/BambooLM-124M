@@ -1,5 +1,5 @@
 #
-```markdown
+
 <pre style="font-size: 0.5em; line-height: 1.2;">
 
     
@@ -10,7 +10,7 @@
     ██████╔╝██║  ██║██║ ╚═╝ ██║██████╔╝╚██████╔╝╚██████╔╝███████╗██║ ╚═╝ ██║       ██║███████╗     ██║██║ ╚═╝ ██║
     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═╝     ╚═╝       ╚═╝╚══════╝     ╚═╝╚═╝     ╚═╝
     </pre>  
-```
+
   
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)

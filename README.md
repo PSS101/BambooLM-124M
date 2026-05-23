@@ -138,6 +138,12 @@ during BambooLM-124M training on 500M tokens.
   <img src="model_train2.png" width="900">
 </p>
 
+BambooLM-124M training on 3B tokens.
+
+<p align="center">
+  <img src="model_train3.png" width="900">
+</p>
+
 - Top: Training loss across optimization steps
 - Bottom: Cosine learning rate schedule
 
@@ -147,7 +153,10 @@ during BambooLM-124M training on 500M tokens.
   <img src="sample_output.png" width="900">
 </p>
 
-
+# Sample output after 3B token traning
+<p align="center">
+  <img src="sample_output2.png" width="900">
+</p>
 ---
 ## Parameter Scale
 

@@ -154,6 +154,7 @@ BambooLM-124M training on 10B tokens.
   <img src="sample_output2.png" width="900">
 </p>
 ---
+
 ## Parameter Scale
 
 | Model | Parameters |
